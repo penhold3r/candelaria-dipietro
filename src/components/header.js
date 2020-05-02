@@ -1,42 +1,49 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useState } from 'react'
+import { Navbar, Button } from 'react-bootstrap'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import logo from '../images/landing-logo.png'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const styles = {
+	header: {
+		position: 'sticky',
+		top: 0,
+	},
+	container: {
+		justifyContent: 'space-between',
+	},
+	logo: {
+		height: '40px',
+		objectFit: 'contain',
+	},
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+	const [opaque, setOpaque] = useState(false)
+
+	useEffect(() => {
+		if (window) {
+			setOpaque(window.scrollY >= 200)
+			window.onscroll = () => setOpaque(window.scrollY >= 200)
+		}
+	}, [])
+
+	return (
+		<header className='main-header'>
+			<Navbar
+				bg={opaque ? 'dark' : 'transparent'}
+				variant='dark'
+				fixed='top'
+				className='justify-content-between'>
+				<Navbar.Brand href='#'>
+					<img alt='' src={logo} className='d-inline-block align-top' style={styles.logo} />
+				</Navbar.Brand>
+				<Button href='#contacto' variant='info' className='d-flex'>
+					<i className='ri-chat-3-line mr-2'></i>
+					<span>Contacto</span>
+				</Button>
+			</Navbar>
+		</header>
+	)
 }
 
 export default Header
