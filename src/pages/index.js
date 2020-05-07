@@ -7,6 +7,7 @@ import About from '../components/About'
 import Services from '../components/Services'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import Slider from '../components/Slider'
 
 const IndexPage = () => (
 	<Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
 		<Hero />
 		<About />
 		<Services />
+		<Slider />
 		<Contact />
 		<Footer />
 	</Layout>

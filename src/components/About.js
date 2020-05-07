@@ -20,7 +20,9 @@ const About = () => {
 									Cuenta tu historia, quién eres y qué ofreces. Déjale saber a tus clientes
 									porqué es importante que te elijan por sobre la competencia.
 								</p>
-								<i className='h2 text-info ri-hand-heart-line'></i>
+								<div className='h2 text-primary text-center text-md-left'>
+									<i className='ri-hand-heart-line'></i>
+								</div>
 								<p className='text-secondary mt-5'>
 									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
 									iure tempore omnis illo quibusdam. Quibusdam quae laudantium magni

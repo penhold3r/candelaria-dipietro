@@ -1,0 +1,45 @@
+@import '~bootstrap/scss/bootstrap';
+
+$primary-color: #00bab5;
+$primary-grey: lighten(desaturate($primary-color, 85%), 10%);
+
+$secondary-color: $primary-grey;
+$secondary-grey: lighten(desaturate($secondary-color, 85%), 10%);
+
+$grey: desaturate($primary-color, 95%);
+$light: lighten(desaturate($primary-color, 91%), 55%);
+$dark: darken(desaturate($primary-color, 85%), 25%);
+
+$theme-colors: (
+	'primary': $primary-color,
+	'secondary': $secondary-color,
+	'grey': $grey,
+	'light': $light,
+	'dark': $dark,
+	'grey-100': darken($light, 10%),
+	'grey-200': darken($light, 20%),
+	'grey-300': darken($light, 30%),
+	'grey-400': darken($light, 40%),
+	'grey-500': darken($light, 50%),
+	'grey-600': darken($light, 60%),
+	'grey-700': darken($light, 70%),
+	'grey-800': darken($light, 80%),
+	'grey-900': darken($light, 90%),
+);
+
+$positions: static, relative, absolute, fixed, sticky;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		// position
+		@each $value in $positions {
+			.pos#{$infix}-#{$value} {
+				position: $value !important;
+			}
+		}
+	}
+}
+
+@import '~bootstrap/scss/bootstrap';

@@ -41,7 +41,7 @@ const Contact = () => {
 										href='https://maps.google.com'
 										target='_blank'
 										rel='noopener noreferrer'>
-										<i className='h3 text-info mb-0 mr-2 ri-home-2-line'></i>
+										<i className='h3 text-primary mb-0 mr-2 ri-home-2-line'></i>
 										<span className='lead'>
 											Tu dirección: calle 123, departamento, provincia.
 										</span>
@@ -50,14 +50,14 @@ const Contact = () => {
 										className='d-flex align-items-center bg-transparent'
 										action
 										href='tel:123 456 7890'>
-										<i className='h3 text-info mb-0 mr-2 ri-phone-line'></i>
+										<i className='h3 text-primary mb-0 mr-2 ri-phone-line'></i>
 										<span className='lead'>123 456 7890</span>
 									</ListGroup.Item>
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent'
 										action
 										href='mailto:info@landingpage.com'>
-										<i className='h3 text-info mb-0 mr-2 ri-mail-line'></i>
+										<i className='h3 text-primary mb-0 mr-2 ri-mail-line'></i>
 										<span className='lead'>info@landingpage.com</span>
 									</ListGroup.Item>
 								</ListGroup>
@@ -138,7 +138,7 @@ const Contact = () => {
 										<Form.Check type='checkbox' label='No soy un robot' required />
 									</Form.Group>
 
-									<Button className='d-flex' variant='info' type='submit'>
+									<Button className='d-flex' variant='primary' type='submit'>
 										<span className='mr-2'>Enviar</span>
 										<i className='ri-mail-send-line'></i>
 									</Button>

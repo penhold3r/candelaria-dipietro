@@ -10,18 +10,17 @@ import PropTypes from 'prop-types'
 
 import SEO from './SEO'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 import 'remixicon/fonts/remixicon.css'
-import '../styles/global.css'
 
-const Layout = ({ children, pageTitle }) => {
-	return (
-		<>
-			<SEO title={pageTitle} />
-			<main>{children}</main>
-		</>
-	)
-}
+import '../styles/global.scss'
+
+const Layout = ({ children, pageTitle }) => (
+	<>
+		<SEO title={pageTitle} />
+		<main>{children}</main>
+	</>
+)
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,

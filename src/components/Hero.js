@@ -28,7 +28,7 @@ const styles = {
 
 const Hero = () => {
 	return (
-		<section className='hero mb-5' style={styles.hero}>
+		<section className='hero mb-5' style={styles.hero} id='inicio'>
 			<Jumbotron
 				fluid
 				style={styles.jumbo}

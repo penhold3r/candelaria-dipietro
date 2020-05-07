@@ -9,6 +9,12 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		{
+			resolve: `gatsby-plugin-sass`,
+			options: {
+				precision: 6,
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
@@ -30,7 +36,7 @@ module.exports = {
 				short_name: `starter`,
 				start_url: `/`,
 				background_color: `#DDDDDD`,
-				theme_color: `#33a2b8`,
+				theme_color: `#192221`,
 				display: `standalone`,
 				icon: `src/images/favicon.png`,
 			},
