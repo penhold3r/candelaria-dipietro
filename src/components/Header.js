@@ -13,8 +13,8 @@ const styles = {
 		objectFit: 'contain',
 	},
 	contact: {
-		right: '4rem',
-		top: '0.5rem',
+		right: '3rem',
+		top: '0.75rem',
 	},
 	hamb: {
 		fontSize: '1.5rem',
@@ -85,7 +85,7 @@ const Header = () => {
 					<Navbar.Toggle
 						as='div'
 						style={styles.hamb}
-						bsPrefix='p-1 text-white d-md-none'
+						bsPrefix='p-1 text-white d-flex d-md-none'
 						children={toggleIcon}
 						aria-controls='basic-navbar-nav'
 						onClick={handleToggle}

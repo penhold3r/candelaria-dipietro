@@ -3,9 +3,10 @@ import { Carousel, Image } from 'react-bootstrap'
 
 const styles = {
 	image: {
-		opacity: '0.6',
-		objectFit: 'cover',
 		height: '300px',
+		objectFit: 'cover',
+		opacity: '0.6',
+		width: '100%',
 	},
 	caption: {
 		top: '20px',

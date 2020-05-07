@@ -4,8 +4,8 @@ import { Container, Row, Col, Card } from 'react-bootstrap'
 const Services = () => {
 	return (
 		<section className='services bg-secondary py-5 mt-5' id='servicios'>
-			<Container className='pb-4'>
-				<h2 className='h1 text-white text-center mt-1 py-2'>Servicios</h2>
+			<Container className='pb-4 my-4'>
+				<h2 className='h1 text-white text-center mt-2 py-2'>Servicios</h2>
 				<Row className='pb-4'>
 					<Col sm={12} md={4} className='my-3 m-md-0'>
 						<Card className='text-center'>

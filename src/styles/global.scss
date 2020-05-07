@@ -5,6 +5,8 @@
 html,
 body {
 	scroll-behavior: smooth;
+
+	@include scrollbars(10px, $primary-color, $grey);
 }
 
 body {
