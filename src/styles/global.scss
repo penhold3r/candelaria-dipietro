@@ -14,4 +14,8 @@ body {
 	margin: 0;
 	background: $light;
 	color: $dark;
+
+	.modal-header .close {
+		outline: none;
+	}
 }

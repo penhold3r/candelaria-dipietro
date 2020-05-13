@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Card, Row, Col, ListGroup, Form, InputGroup, Button } from 'react-bootstrap'
 
 import contactBg from '../images/landing-contact.jpg'
+import ContactModal from './ContactModal'
 
 const styles = {
 	contact: {
@@ -15,19 +16,43 @@ const styles = {
 
 const Contact = () => {
 	const [validated, setValidated] = useState(false)
+	const [modal, setModal] = useState(false)
+	const [data, setData] = useState({ name: '', email: '', message: '' })
+	const [modalTexts, setModalTexts] = useState({ title: '', text: '' })
 
-	const handleSubmit = event => {
-		const form = event.currentTarget
-		event.preventDefault()
-		event.stopPropagation()
-		if (form.checkValidity() === false) {
-			console.log('invalid')
-		}
+	const handleChange = e => {
+		const { name, value } = e.target
+
+		setData({ ...data, [name]: value })
+	}
+
+	const handleSubmit = e => {
+		const form = e.currentTarget
+
+		e.preventDefault()
+		e.stopPropagation()
 
 		setValidated(true)
+
+		if (form.checkValidity()) {
+			setModal(true)
+			setModalTexts({
+				title: '¡Mensaje Enviado!',
+				text: `${data.name}, gracias por comunicarte con nosotros, te responderemos a la brevedad.`,
+			})
+			setValidated(false)
+			setData({ name: '', email: '', message: '' })
+		}
 	}
+
 	return (
 		<section className='section py-5' id='contacto' style={styles.contact}>
+			<ContactModal
+				show={modal}
+				onHide={() => setModal(false)}
+				title={modalTexts.title}
+				text={modalTexts.text}
+			/>
 			<Container className='py-5'>
 				<Card className='border-0 p-3' style={styles.card}>
 					<Card.Body className='mb-4 p-0'>
@@ -76,7 +101,14 @@ const Contact = () => {
 													<i className='ri-account-circle-line'></i>
 												</InputGroup.Text>
 											</InputGroup.Prepend>
-											<Form.Control type='text' placeholder='Cosme Fulanito' required />
+											<Form.Control
+												onChange={e => handleChange(e)}
+												type='text'
+												placeholder='Cosme Fulanito'
+												name='name'
+												value={data.name}
+												required
+											/>
 											<Form.Control.Feedback>Completo!</Form.Control.Feedback>
 											<Form.Control.Feedback type='invalid'>
 												Por favor ingresa tu nombre
@@ -96,8 +128,11 @@ const Contact = () => {
 												</InputGroup.Text>
 											</InputGroup.Prepend>
 											<Form.Control
+												onChange={e => handleChange(e)}
 												type='email'
+												name='email'
 												placeholder='nombre@email.com'
+												value={data.email}
 												required
 											/>
 											<Form.Control.Feedback>Completo!</Form.Control.Feedback>
@@ -119,7 +154,10 @@ const Contact = () => {
 												</InputGroup.Text>
 											</InputGroup.Prepend>
 											<Form.Control
+												onChange={e => handleChange(e)}
 												as='textarea'
+												name='message'
+												value={data.message}
 												rows='4'
 												placeholder='Tu mensaje...'
 												required

@@ -14,7 +14,7 @@ const styles = {
 	},
 	contact: {
 		right: '3rem',
-		top: '0.75rem',
+		top: '0.5rem',
 	},
 	hamb: {
 		fontSize: '1.5rem',
@@ -62,8 +62,6 @@ const Header = () => {
 			}
 		}
 	}, [])
-
-	console.log(scrolled)
 
 	return (
 		<header className='main-header'>
