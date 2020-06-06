@@ -11,6 +11,7 @@ const styles = {
 	logo: {
 		height: '40px',
 		objectFit: 'contain',
+		width: '125px',
 	},
 	contact: {
 		right: '3rem',
@@ -90,7 +91,10 @@ const Header = () => {
 					/>
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav className='ml-auto mr-2 mr-md-3 mt-3 mt-md-0 text-right'>
-							<Nav.Link href='#inicio' className='text-md-uppercase py-3 p-md-2'>
+							<Nav.Link
+								href='#inicio'
+								className='text-md-uppercase py-3 p-md-2'
+								onClick={() => {}}>
 								Inicio
 							</Nav.Link>
 							<div className='border-bottom d-md-none border-grey' />

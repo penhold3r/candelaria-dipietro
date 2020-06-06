@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
+/***********************************
+*
+* COLORS
+*
+*/
+
 $primary-color: #00bab5;
 $primary-grey: lighten(desaturate($primary-color, 85%), 10%);
 
@@ -27,22 +33,13 @@ $theme-colors: (
 	'grey-900': darken($light, 90%),
 );
 
-$positions: static, relative, absolute, fixed, sticky;
+@import '~bootstrap/scss/bootstrap';
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-	@include media-breakpoint-up($breakpoint) {
-		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-		// position
-		@each $value in $positions {
-			.pos#{$infix}-#{$value} {
-				position: $value !important;
-			}
-		}
-	}
-}
-
-// scrollbar styling
+/***********************************
+*
+* SCROLLBAR COLOR
+*
+*/
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
 	// Webkit
 	&::-webkit-scrollbar {
@@ -62,4 +59,49 @@ $positions: static, relative, absolute, fixed, sticky;
 	scrollbar-color: $foreground-color $background-color;
 }
 
-@import '~bootstrap/scss/bootstrap';
+/***********************************
+*
+* RESPONSIVE POSITION AND SIZES
+*
+*/
+
+$positions: static, relative, absolute, fixed, sticky;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		// position classes
+		@each $value in $positions {
+			.pos#{$infix}-#{$value} {
+				position: $value !important;
+			}
+		}
+
+		// size classes
+		@each $prop, $abbrev in (width: w, height: h) {
+			@each $size, $length in $sizes {
+				.#{$abbrev}-#{$size} {
+					#{$prop}: $length !important;
+				}
+				.#{$abbrev}#{$infix}-#{$size} {
+					#{$prop}: $length !important;
+				}
+			}
+		}
+	}
+}
+
+/***********************************
+*
+* TYPOGRAPHY
+*
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$main-font: 'Open Sans', sans-serif;
+
+$enable-responsive-font-sizes: true;
+
+/**********************************/

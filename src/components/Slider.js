@@ -25,7 +25,7 @@ const Slider = () => {
 					<Carousel.Caption
 						className='d-flex flex-column justify-content-center'
 						style={styles.caption}>
-						<h3 className='display-4'>Primer Título</h3>
+						<h3 className='slide-title display-4'>Primer Título</h3>
 						<p className='lead'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 					</Carousel.Caption>
 				</Carousel.Item>
@@ -35,7 +35,7 @@ const Slider = () => {
 					<Carousel.Caption
 						className='d-flex flex-column justify-content-center'
 						style={styles.caption}>
-						<h3 className='display-4'>Segundo Título</h3>
+						<h3 className='slide-title display-4'>Segundo Título</h3>
 						<p className='lead'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</Carousel.Caption>
 				</Carousel.Item>
@@ -45,7 +45,7 @@ const Slider = () => {
 					<Carousel.Caption
 						className='d-flex flex-column justify-content-center'
 						style={styles.caption}>
-						<h3 className='display-4'>Tercer Titulo</h3>
+						<h3 className='slide-title display-4'>Tercer Titulo</h3>
 						<p className='lead'>
 							Praesent commodo cursus magna, vel scelerisque nisl consectetur.
 						</p>

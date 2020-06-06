@@ -8,14 +8,14 @@ const About = () => {
 		<section className='about section py-5' id='nosotros'>
 			<div className='spacer py-3' />
 			<Container className='my-5'>
-				<Card className='shadow-sm border-0 p-3'>
+				<Card className='shadow-sm border-0 p-0 p-md-3'>
 					<Card.Body>
 						<Row>
 							<Col sm={12} md={4} className='d-flex'>
 								<Image src={aboutImg} fluid rounded style={{ objectFit: 'cover' }} />
 							</Col>
 							<Col sm={12} md={8} className='pr-md-5'>
-								<h2 className='display-4 mt-4 mt-md-0'>Tu historia</h2>
+								<h2 className='about-title display-4 mt-4 mt-md-0'>Tu historia</h2>
 								<p className='lead py-2'>
 									Cuenta tu historia, quién eres y qué ofreces. Déjale saber a tus clientes
 									porqué es importante que te elijan por sobre la competencia.

@@ -33,14 +33,17 @@ const Hero = () => {
 				fluid
 				style={styles.jumbo}
 				className='d-flex justify-content-center align-items-center flex-column'>
-				<Container>
-					<h2 className='display-4 text-uppercase font-weight-bold text-white'>
+				<Container className='d-flex flex-column'>
+					<h2 className='hero-text display-4 text-center text-md-left text-uppercase font-weight-bold text-white'>
 						Tu Página Web
 					</h2>
-					<h3 className='h2 text-white'>
+					<h3 className='hero-sub h2 text-center text-md-left text-white'>
 						Un sito web moderno y ágil para mostrar tu negocio en internet.
 					</h3>
-					<Button href='#nosotros' variant='outline-light mt-5' size='lg'>
+					<Button
+						href='#nosotros'
+						variant='outline-light mt-5 mx-auto mx-md-0 mr-md-auto'
+						size='lg'>
 						<span className='text-uppercase' style={styles.cta}>
 							Saber más
 						</span>

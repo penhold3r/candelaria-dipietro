@@ -54,40 +54,40 @@ const Contact = () => {
 				text={modalTexts.text}
 			/>
 			<Container className='py-5'>
-				<Card className='border-0 p-3' style={styles.card}>
-					<Card.Body className='mb-4 p-0'>
-						<h2 className='h1 p-3'>Contacto</h2>
+				<Card className='border-0 pt-3 px-3 p-md-3' style={styles.card}>
+					<Card.Body className='mb-md-4 p-0'>
+						<h2 className='h1 p-0 p-md-3'>Contacto</h2>
 						<Row>
 							<Col sm={12} md={6}>
 								<ListGroup className='bg-transparent mb-4 mb-md-0' variant='flush'>
 									<ListGroup.Item
-										className='d-flex align-items-center bg-transparent'
+										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
 										href='https://maps.google.com'
 										target='_blank'
 										rel='noopener noreferrer'>
-										<i className='h3 text-primary mb-0 mr-2 ri-home-2-line'></i>
+										<i className='h3 text-primary mb-0 mr-3 ri-home-2-line'></i>
 										<span className='lead'>
 											Tu dirección: calle 123, departamento, provincia.
 										</span>
 									</ListGroup.Item>
 									<ListGroup.Item
-										className='d-flex align-items-center bg-transparent'
+										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
 										href='tel:123 456 7890'>
-										<i className='h3 text-primary mb-0 mr-2 ri-phone-line'></i>
+										<i className='h3 text-primary mb-0 mr-3 ri-phone-line'></i>
 										<span className='lead'>123 456 7890</span>
 									</ListGroup.Item>
 									<ListGroup.Item
-										className='d-flex align-items-center bg-transparent'
+										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
 										href='mailto:info@landingpage.com'>
-										<i className='h3 text-primary mb-0 mr-2 ri-mail-line'></i>
+										<i className='h3 text-primary mb-0 mr-3 ri-mail-line'></i>
 										<span className='lead'>info@landingpage.com</span>
 									</ListGroup.Item>
 								</ListGroup>
 							</Col>
-							<Col sm={12} md={6}>
+							<Col sm={12} md={6} className='px-0 px-md-3'>
 								<Form
 									className='bg-white rounded p-3 p-lg-4 shadow-sm'
 									noValidate
@@ -176,7 +176,10 @@ const Contact = () => {
 										<Form.Check type='checkbox' label='No soy un robot' required />
 									</Form.Group>
 
-									<Button className='d-flex' variant='primary' type='submit'>
+									<Button
+										className='d-flex w-100 w-md-auto'
+										variant='primary'
+										type='submit'>
 										<span className='mr-2'>Enviar</span>
 										<i className='ri-mail-send-line'></i>
 									</Button>
