@@ -177,7 +177,7 @@ const Contact = () => {
 									</Form.Group>
 
 									<Button
-										className='d-flex w-100 w-md-auto'
+										className='d-flex w-100 w-md-auto w-lg-auto w-xl-auto'
 										variant='primary'
 										type='submit'>
 										<span className='mr-2'>Enviar</span>

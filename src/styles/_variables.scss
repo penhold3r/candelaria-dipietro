@@ -7,6 +7,7 @@
 */
 
 $primary-color: #00bab5;
+//$primary-color: #7b07ff;
 $primary-grey: lighten(desaturate($primary-color, 85%), 10%);
 
 $secondary-color: $primary-grey;
@@ -32,6 +33,23 @@ $theme-colors: (
 	'grey-800': darken($light, 80%),
 	'grey-900': darken($light, 90%),
 );
+
+:export {
+	primary: $primary-color;
+	secondary: $secondary-color;
+	grey: $grey;
+	light: $light;
+	dark: $dark;
+	grey100: darken($light, 10%);
+	grey200: darken($light, 20%);
+	grey300: darken($light, 30%);
+	grey400: darken($light, 40%);
+	grey500: darken($light, 50%);
+	grey600: darken($light, 60%);
+	grey700: darken($light, 70%);
+	grey800: darken($light, 80%);
+	grey900: darken($light, 90%);
+}
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -90,6 +108,14 @@ $positions: static, relative, absolute, fixed, sticky;
 			}
 		}
 	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.h-100 {
+	width: 100%;
 }
 
 /***********************************

@@ -1,8 +1,11 @@
 import React from 'react'
 import { Jumbotron, Container, Button } from 'react-bootstrap'
 
+import hex2rgba from '../utils/hex2rgba'
+
 import Link from './Link'
 
+import colors from '../styles/_variables.scss'
 import bg from '../images/landing-hero.jpg'
 
 const styles = {
@@ -11,7 +14,7 @@ const styles = {
 		backgroundAttachment: 'fixed',
 	},
 	jumbo: {
-		background: 'rgba(0, 0, 0, 0.5)',
+		background: hex2rgba(colors.dark, 0.65),
 		height: '100vh',
 	},
 	cta: {

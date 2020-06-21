@@ -10,7 +10,7 @@ const Footer = () => {
 					<Col style={{ flexGrow: 0 }}>
 						<Link
 							style={{ height: '35px', width: '35px' }}
-							className='border border-info rounded-circle d-flex justify-content-center align-content-center'
+							className='border border-primary rounded-circle d-flex justify-content-center align-content-center'
 							to='https://facebook.com'
 							title='Facebook'>
 							<i className='ri-facebook-fill text-light lead m-auto'></i>
@@ -19,7 +19,7 @@ const Footer = () => {
 					<Col style={{ flexGrow: 0 }}>
 						<Link
 							style={{ height: '35px', width: '35px' }}
-							className='border border-info rounded-circle d-flex justify-content-center align-content-center'
+							className='border border-primary rounded-circle d-flex justify-content-center align-content-center'
 							to='https://instagram.com'
 							title='Instagram'>
 							<i className='ri-instagram-line text-light lead m-auto'></i>
@@ -28,7 +28,7 @@ const Footer = () => {
 					<Col style={{ flexGrow: 0 }}>
 						<Link
 							style={{ height: '35px', width: '35px' }}
-							className='border border-info rounded-circle d-flex justify-content-center align-content-center'
+							className='border border-primary rounded-circle d-flex justify-content-center align-content-center'
 							to='https://twitter.com'
 							title='Twitter'>
 							<i className='ri-twitter-fill text-light lead m-auto'></i>

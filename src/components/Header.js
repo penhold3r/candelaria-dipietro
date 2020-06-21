@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 
@@ -38,31 +38,29 @@ const Header = () => {
 		`
 	)
 	const [opaque, setOpaque] = useState(false)
-	const [scrolled, setScrolled] = useState(false)
-	const [colapsed, setColapsed] = useState(false)
+	const [colapsed, setColapsed] = useState(true)
 
+	const toggleBtn = useRef(null)
 	const toggleIcon = colapsed ? (
-		<i className='ri-close-line'></i>
-	) : (
 		<i className='ri-menu-line'></i>
+	) : (
+		<i className='ri-close-line'></i>
 	)
 
 	const handleToggle = () => {
 		setColapsed(!colapsed)
-		!scrolled && setOpaque(!opaque)
+		setOpaque(!opaque)
 	}
+
+	const handleScroll = () => colapsed && setOpaque(window.scrollY >= 200)
 
 	useEffect(() => {
 		if (window) {
-			setOpaque(window.scrollY >= 200)
-			setScrolled(window.scrollY >= 200)
+			window.scrollY >= 200 && setOpaque(true)
 
-			window.onscroll = () => {
-				setOpaque(window.scrollY >= 200)
-				setScrolled(window.scrollY >= 200)
-			}
+			window.onscroll = () => handleScroll()
 		}
-	}, [])
+	}, [colapsed])
 
 	return (
 		<header className='main-header'>
@@ -87,6 +85,7 @@ const Header = () => {
 						bsPrefix='p-1 text-white d-flex d-md-none'
 						children={toggleIcon}
 						aria-controls='basic-navbar-nav'
+						ref={toggleBtn}
 						onClick={handleToggle}
 					/>
 					<Navbar.Collapse id='basic-navbar-nav'>
@@ -94,15 +93,21 @@ const Header = () => {
 							<Nav.Link
 								href='#inicio'
 								className='text-md-uppercase py-3 p-md-2'
-								onClick={() => {}}>
+								onClick={() => toggleBtn.current.click()}>
 								Inicio
 							</Nav.Link>
 							<div className='border-bottom d-md-none border-grey' />
-							<Nav.Link href='#nosotros' className='text-md-uppercase py-3 p-md-2'>
+							<Nav.Link
+								href='#nosotros'
+								className='text-md-uppercase py-3 p-md-2'
+								onClick={() => toggleBtn.current.click()}>
 								Info
 							</Nav.Link>
 							<div className='border-bottom d-md-none border-grey' />
-							<Nav.Link href='#servicios' className='text-md-uppercase py-3 p-md-2'>
+							<Nav.Link
+								href='#servicios'
+								className='text-md-uppercase py-3 p-md-2'
+								onClick={() => toggleBtn.current.click()}>
 								Servicios
 							</Nav.Link>
 						</Nav>
