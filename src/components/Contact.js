@@ -23,7 +23,7 @@ const Contact = ({ theme }) => {
 			backgroundBlendMode: themeShade === 'dark' ? 'multiply' : 'normal',
 		},
 		card: {
-			background: hex2rgba(themeShade === 'dark' ? colors[themeShade] : '#ffffff', 0.6),
+			background: hex2rgba(themeShade === 'dark' ? '#333333' : '#ffffff', 0.6),
 		},
 	}
 
@@ -32,6 +32,8 @@ const Contact = ({ theme }) => {
 
 		setData({ ...data, [name]: value })
 	}
+
+	console.log(colors)
 
 	const handleSubmit = e => {
 		const form = e.currentTarget
