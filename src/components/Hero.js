@@ -28,7 +28,7 @@ const Hero = ({ theme }) => {
 			position: 'relative',
 		},
 		jumbo: {
-			background: theme === 'light' ? 'transparent' : hex2rgba('#333333', 0.65),
+			background: theme === 'light' ? 'transparent' : 'rgba(0,0, 0, 0.65)',
 			height: '100vh',
 		},
 		cta: {
