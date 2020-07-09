@@ -12,7 +12,7 @@ import Slider from '../components/Slider'
 
 import ThemeSwitcher from '../components/ThemeSwitcher'
 
-const TealPage = () => (
+const LightPage = () => (
 	<Layout>
 		<Theme theme='light'>
 			<Header />
@@ -27,4 +27,4 @@ const TealPage = () => (
 	</Layout>
 )
 
-export default TealPage
+export default LightPage

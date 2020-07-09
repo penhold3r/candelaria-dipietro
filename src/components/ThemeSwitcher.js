@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import Link from './Link'
 import { Button } from 'react-bootstrap'
 
 const ThemeSwitcher = ({ theme }) => {
