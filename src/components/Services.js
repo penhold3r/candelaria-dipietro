@@ -1,14 +1,23 @@
 import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 
-const Services = () => {
+import colors from '../styles/_variables.scss'
+
+const Services = ({ theme }) => {
+	const themeShade = theme === 'teal' ? 'light' : theme
+	const themeText = theme === 'teal' || theme === 'dark' ? 'light' : 'dark'
+
 	return (
-		<section className='services bg-secondary py-5 mt-5' id='servicios'>
+		<section
+			className={`services bg-${
+				theme === 'dark' ? 'grey-700' : theme === 'light' ? 'white' : 'secondary'
+			} py-5 mt-5`}
+			id='servicios'>
 			<Container className='pb-4 my-4'>
 				<h2 className='h1 text-white text-center mt-2 py-2'>Servicios</h2>
 				<Row className='pb-4'>
 					<Col sm={12} md={4} className='my-3 m-md-0'>
-						<Card className='text-center'>
+						<Card className={`text-center bg-${themeShade}`}>
 							<Card.Header className='py-4'>
 								<i className='display-3 text-primary ri-flashlight-line'></i>
 							</Card.Header>
@@ -24,7 +33,7 @@ const Services = () => {
 						</Card>
 					</Col>
 					<Col sm={12} md={4} className='my-3 m-md-0'>
-						<Card className='text-center'>
+						<Card className={`text-center bg-${themeShade}`}>
 							<Card.Header className='py-4'>
 								<i className='display-3 text-primary ri-shirt-line'></i>
 							</Card.Header>
@@ -40,7 +49,7 @@ const Services = () => {
 						</Card>
 					</Col>
 					<Col sm={12} md={4} className='my-3 m-md-0'>
-						<Card className='text-center'>
+						<Card className={`text-center bg-${themeShade}`}>
 							<Card.Header className='py-4'>
 								<i className='display-3 text-primary ri-device-line'></i>
 							</Card.Header>

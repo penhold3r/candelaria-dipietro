@@ -3,12 +3,18 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap'
 
 import aboutImg from '../images/landing-about.jpg'
 
-const About = () => {
+const About = ({ theme }) => {
+	const themeShade = theme === 'teal' ? 'light' : theme
+	const themeText = theme === 'teal' || theme === 'dark' ? 'light' : 'dark'
+
 	return (
 		<section className='about section py-5' id='nosotros'>
 			<div className='spacer py-3' />
 			<Container className='my-5'>
-				<Card className='shadow-sm border-0 p-0 p-md-3'>
+				<Card
+					className={`shadow-sm border-0 p-0 p-md-3 bg-${
+						theme === 'dark' ? 'grey-700' : 'white'
+					}`}>
 					<Card.Body>
 						<Row>
 							<Col sm={12} md={4} className='d-flex'>

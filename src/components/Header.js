@@ -3,27 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 
 import logo from '../images/landing-logo.png'
+import logoLight from '../images/landing-logo_inv.png'
 
-const styles = {
-	nav: {
-		transition: 'all 0.3s',
-	},
-	logo: {
-		height: '40px',
-		objectFit: 'contain',
-		width: '125px',
-	},
-	contact: {
-		right: '3rem',
-		top: '0.5rem',
-	},
-	hamb: {
-		fontSize: '1.5rem',
-		cursor: 'pointer',
-	},
-}
-
-const Header = () => {
+const Header = ({ theme }) => {
 	const {
 		site: { siteMetadata },
 	} = useStaticQuery(
@@ -39,6 +21,29 @@ const Header = () => {
 	)
 	const [opaque, setOpaque] = useState(false)
 	const [colapsed, setColapsed] = useState(true)
+
+	const themeShade = theme === 'teal' ? 'dark' : theme
+	const themeText = theme === 'teal' || theme === 'dark' ? 'light' : 'dark'
+	const themeNav = theme === 'light' ? 'white' : themeShade
+
+	const styles = {
+		nav: {
+			transition: 'all 0.3s',
+		},
+		logo: {
+			height: '40px',
+			objectFit: 'contain',
+			width: '125px',
+		},
+		contact: {
+			right: '3rem',
+			top: '0.5rem',
+		},
+		hamb: {
+			fontSize: '1.5rem',
+			cursor: 'pointer',
+		},
+	}
 
 	const toggleBtn = useRef(null)
 	const toggleIcon = colapsed ? (
@@ -65,8 +70,8 @@ const Header = () => {
 	return (
 		<header className='main-header'>
 			<Navbar
-				bg={opaque ? 'dark' : 'transparent'}
-				variant='dark'
+				bg={opaque ? themeNav : 'transparent'}
+				variant={themeShade}
 				fixed='top'
 				expand='md'
 				style={styles.nav}>
@@ -74,7 +79,7 @@ const Header = () => {
 					<Navbar.Brand href='#'>
 						<img
 							alt={siteMetadata.title}
-							src={logo}
+							src={theme === 'light' ? logoLight : logo}
 							className='d-inline-block align-top'
 							style={styles.logo}
 						/>
@@ -82,7 +87,7 @@ const Header = () => {
 					<Navbar.Toggle
 						as='div'
 						style={styles.hamb}
-						bsPrefix='p-1 text-white d-flex d-md-none'
+						bsPrefix={`p-1 text-${themeText} d-flex d-md-none`}
 						children={toggleIcon}
 						aria-controls='basic-navbar-nav'
 						ref={toggleBtn}
@@ -114,7 +119,7 @@ const Header = () => {
 					</Navbar.Collapse>
 					<Button
 						href='#contacto'
-						variant='primary'
+						variant={theme === 'teal' ? 'primary' : 'outline-primary'}
 						className='d-flex pos-absolute pos-md-static'
 						style={styles.contact}>
 						<i className='ri-chat-3-line mr-2'></i>
