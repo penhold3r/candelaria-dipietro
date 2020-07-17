@@ -4,11 +4,10 @@
 html,
 body {
 	scroll-behavior: smooth;
-	@include scrollbars(10px, $primary-color, $grey);
+	@include scrollbars(10px, $secondary-color, $grey);
 }
 
 body {
-	font-family: $main-font;
 	margin: 0;
 	background: $light;
 	color: $dark;

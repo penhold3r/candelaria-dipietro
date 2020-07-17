@@ -2,10 +2,11 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 
-import logo from '../images/landing-logo.png'
-import logoLight from '../images/landing-logo_inv.png'
+import Link from './Link'
 
-const Header = ({ theme }) => {
+import logo from '../images/candelaria_di_pietro-logo.svg'
+
+const Header = () => {
 	const {
 		site: { siteMetadata },
 	} = useStaticQuery(
@@ -22,16 +23,12 @@ const Header = ({ theme }) => {
 	const [opaque, setOpaque] = useState(false)
 	const [colapsed, setColapsed] = useState(true)
 
-	const themeShade = theme === 'teal' ? 'dark' : theme
-	const themeText = theme === 'teal' || theme === 'dark' ? 'light' : 'dark'
-	const themeNav = theme === 'light' ? 'white' : themeShade
-
 	const styles = {
 		nav: {
 			transition: 'all 0.3s',
 		},
 		logo: {
-			height: '40px',
+			height: '80px',
 			objectFit: 'contain',
 			width: '125px',
 		},
@@ -70,8 +67,8 @@ const Header = ({ theme }) => {
 	return (
 		<header className='main-header'>
 			<Navbar
-				bg={opaque ? themeNav : 'transparent'}
-				variant={themeShade}
+				bg={opaque ? 'primary' : 'transparent'}
+				variant={'dark'}
 				fixed='top'
 				expand='md'
 				style={styles.nav}>
@@ -79,7 +76,7 @@ const Header = ({ theme }) => {
 					<Navbar.Brand href='#'>
 						<img
 							alt={siteMetadata.title}
-							src={theme === 'light' ? logoLight : logo}
+							src={logo}
 							className='d-inline-block align-top'
 							style={styles.logo}
 						/>
@@ -87,7 +84,7 @@ const Header = ({ theme }) => {
 					<Navbar.Toggle
 						as='div'
 						style={styles.hamb}
-						bsPrefix={`p-1 text-${themeText} d-flex d-md-none`}
+						bsPrefix={`p-1 text-light d-flex d-md-none`}
 						children={toggleIcon}
 						aria-controls='basic-navbar-nav'
 						ref={toggleBtn}
@@ -95,35 +92,35 @@ const Header = ({ theme }) => {
 					/>
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav className='ml-auto mr-2 mr-md-3 mt-3 mt-md-0 text-right'>
-							<Nav.Link
-								href='#inicio'
-								className='text-md-uppercase py-3 p-md-2'
+							<Link
+								to='/#inicio'
+								className='text-secondary text-decoration-none py-3 p-md-2'
 								onClick={() => toggleBtn.current.click()}>
 								Inicio
-							</Nav.Link>
+							</Link>
 							<div className='border-bottom d-md-none border-grey' />
-							<Nav.Link
-								href='#nosotros'
-								className='text-md-uppercase py-3 p-md-2'
+							<Link
+								to='/#servicios'
+								className='text-secondary text-decoration-none py-3 p-md-2'
 								onClick={() => toggleBtn.current.click()}>
-								Info
-							</Nav.Link>
+								Áreas de trabajo
+							</Link>
 							<div className='border-bottom d-md-none border-grey' />
-							<Nav.Link
-								href='#servicios'
-								className='text-md-uppercase py-3 p-md-2'
+							<Link
+								to='/#nosotros'
+								className='text-secondary text-decoration-none py-3 p-md-2'
 								onClick={() => toggleBtn.current.click()}>
-								Servicios
-							</Nav.Link>
+								Nosotros
+							</Link>
 						</Nav>
 					</Navbar.Collapse>
 					<Button
 						href='#contacto'
-						variant={theme === 'teal' ? 'primary' : 'outline-primary'}
+						variant={'secondary'}
 						className='d-flex pos-absolute pos-md-static'
 						style={styles.contact}>
 						<i className='ri-chat-3-line mr-2'></i>
-						<span>Contacto</span>
+						<span>Asesorate ahora</span>
 					</Button>
 				</Container>
 			</Navbar>

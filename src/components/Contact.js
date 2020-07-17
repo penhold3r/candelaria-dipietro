@@ -3,37 +3,19 @@ import { Container, Card, Row, Col, ListGroup, Form, InputGroup, Button } from '
 
 import hex2rgba from '../utils/hex2rgba'
 
-import colors from '../styles/_variables.scss'
-
-import contactBg from '../images/landing-contact.jpg'
 import ContactModal from './ContactModal'
 
-const Contact = ({ theme }) => {
+const Contact = () => {
 	const [validated, setValidated] = useState(false)
 	const [modal, setModal] = useState(false)
 	const [data, setData] = useState({ name: '', email: '', message: '' })
 	const [modalTexts, setModalTexts] = useState({ title: '', text: '' })
-
-	const themeShade = theme === 'teal' ? 'light' : theme
-	const themeText = theme === 'teal' || theme === 'light' ? 'dark' : 'light'
-
-	const styles = {
-		contact: {
-			background: `url(${contactBg}) no-repeat fixed center / cover`,
-			backgroundBlendMode: themeShade === 'dark' ? 'multiply' : 'normal',
-		},
-		card: {
-			background: hex2rgba(themeShade === 'dark' ? '#333333' : '#ffffff', 0.6),
-		},
-	}
 
 	const handleChange = e => {
 		const { name, value } = e.target
 
 		setData({ ...data, [name]: value })
 	}
-
-	console.log(colors)
 
 	const handleSubmit = e => {
 		const form = e.currentTarget
@@ -55,10 +37,7 @@ const Contact = ({ theme }) => {
 	}
 
 	return (
-		<section
-			className={`section ${theme === 'dark' && 'bg-grey-600'} bg-foo py-5`}
-			id='contacto'
-			style={styles.contact}>
+		<section className={`section bg-secondary bg-foo py-5`} id='contacto'>
 			<ContactModal
 				show={modal}
 				onHide={() => setModal(false)}
@@ -66,9 +45,11 @@ const Contact = ({ theme }) => {
 				text={modalTexts.text}
 			/>
 			<Container className='py-5'>
-				<Card className='border-0 pt-3 px-3 p-md-3' style={styles.card}>
+				<Card
+					className='border-0 pt-3 px-3 p-md-3'
+					style={{ background: hex2rgba('#FFFFFF', 0.6) }}>
 					<Card.Body className='mb-md-4 p-0'>
-						<h2 className='h1 p-0 p-md-3'>Contacto</h2>
+						<h2 className='h1 p-0 p-md-3 text-grey'>Contacto</h2>
 						<Row>
 							<Col sm={12} md={6}>
 								<ListGroup className='bg-transparent mb-4 mb-md-0' variant='flush'>
@@ -79,7 +60,7 @@ const Contact = ({ theme }) => {
 										target='_blank'
 										rel='noopener noreferrer'>
 										<i className='h3 text-primary mb-0 mr-3 ri-home-2-line'></i>
-										<span className={`lead text-${themeText}`}>
+										<span className={`lead text-primary`}>
 											Tu dirección: calle 123, departamento, provincia.
 										</span>
 									</ListGroup.Item>
@@ -88,22 +69,20 @@ const Contact = ({ theme }) => {
 										action
 										href='tel:123 456 7890'>
 										<i className='h3 text-primary mb-0 mr-3 ri-phone-line'></i>
-										<span className={`lead text-${themeText}`}>123 456 7890</span>
+										<span className={`lead text-primary`}>123 456 7890</span>
 									</ListGroup.Item>
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
 										href='mailto:info@landingpage.com'>
 										<i className='h3 text-primary mb-0 mr-3 ri-mail-line'></i>
-										<span className={`lead text-${themeText}`}>info@landingpage.com</span>
+										<span className={`lead text-primary`}>info@landingpage.com</span>
 									</ListGroup.Item>
 								</ListGroup>
 							</Col>
 							<Col sm={12} md={6} className='px-0 px-md-3'>
 								<Form
-									className={`bg-${
-										theme === 'dark' ? theme : 'white'
-									} rounded p-3 p-lg-4 shadow-sm`}
+									className={`bg-white rounded p-3 p-lg-4 shadow-sm`}
 									noValidate
 									validated={validated}
 									onSubmit={handleSubmit}>
@@ -113,21 +92,13 @@ const Contact = ({ theme }) => {
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
 													id='inputGroupPrepend'
-													className={`${
-														theme === 'dark'
-															? 'bg-grey-600 border-grey-600'
-															: 'border-grey-100'
-													} `}>
+													className={`bg-light border-grey-100`}>
 													<i
-														className={`ri-account-circle-line text-${themeText}`}></i>
+														className={`ri-account-circle-line text-primary-grey`}></i>
 												</InputGroup.Text>
 											</InputGroup.Prepend>
 											<Form.Control
-												className={`bg-${
-													theme === 'dark' ? theme : 'white'
-												} border-grey-${
-													theme === 'dark' ? '600' : '100'
-												} text-${themeText} rounded-right`}
+												className={`bg-white border-grey-100 text-dark rounded-right`}
 												onChange={e => handleChange(e)}
 												type='text'
 												placeholder='Cosme Fulanito'
@@ -151,20 +122,12 @@ const Contact = ({ theme }) => {
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
 													id='inputGroupPrepend'
-													className={`${
-														theme === 'dark'
-															? 'bg-grey-600 border-grey-600'
-															: 'border-grey-100'
-													} `}>
-													<i className={`ri-at-line text-${themeText}`}></i>
+													className={`bg-light border-grey-100`}>
+													<i className={`ri-at-line text-primary-grey`}></i>
 												</InputGroup.Text>
 											</InputGroup.Prepend>
 											<Form.Control
-												className={`bg-${
-													theme === 'dark' ? theme : 'white'
-												} border-grey-${
-													theme === 'dark' ? '600' : '100'
-												} text-${themeText} rounded-right`}
+												className={`bg-white border-grey-100 text-dark rounded-right`}
 												onChange={e => handleChange(e)}
 												type='email'
 												name='email'
@@ -188,20 +151,12 @@ const Contact = ({ theme }) => {
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
 													id='inputGroupPrepend'
-													className={`${
-														theme === 'dark'
-															? 'bg-grey-600 border-grey-600'
-															: 'border-grey-100'
-													} `}>
-													<i className={`ri-message-2-line text-${themeText}`}></i>
+													className={`bg-light border-grey-100`}>
+													<i className={`ri-message-2-line text-primary-grey`}></i>
 												</InputGroup.Text>
 											</InputGroup.Prepend>
 											<Form.Control
-												className={`bg-${
-													theme === 'dark' ? theme : 'white'
-												} border-grey-${
-													theme === 'dark' ? '600' : '100'
-												} text-${themeText} rounded-right`}
+												className={`bg-white border-grey-100 text-dark rounded-right`}
 												onChange={e => handleChange(e)}
 												as='textarea'
 												name='message'
@@ -226,7 +181,7 @@ const Contact = ({ theme }) => {
 
 									<Button
 										className='d-flex w-100 w-md-auto w-lg-auto w-xl-auto justify-content-center align-items-center'
-										variant={theme === 'teal' ? 'primary' : 'outline-primary'}
+										variant={'outline-primary'}
 										type='submit'>
 										<span className='mr-2'>Enviar</span>
 										<i className='ri-mail-send-line'></i>

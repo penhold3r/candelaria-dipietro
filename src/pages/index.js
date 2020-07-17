@@ -1,11 +1,22 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
-const IndexPage = () => {
-	useEffect(() => {
-		if (typeof window !== `undefined`) window.location.replace(`/teal`)
-	}, [])
+import Layout from '../components/Layout'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import About from '../components/About'
+import Services from '../components/Services'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
-	return <></>
-}
+const IndexPage = () => (
+	<Layout>
+		<Header />
+		<Hero />
+		<Services />
+		<About />
+		<Contact />
+		<Footer />
+	</Layout>
+)
 
 export default IndexPage

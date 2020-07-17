@@ -1,49 +1,60 @@
 import React from 'react'
 import { Container, Row, Col, Card, Image } from 'react-bootstrap'
 
-import aboutImg from '../images/landing-about.jpg'
+import aboutImg from '../images/cadelaria_di_pietro-abogada.jpg'
 
-const About = ({ theme }) => {
-	const themeShade = theme === 'teal' ? 'light' : theme
-	const themeText = theme === 'teal' || theme === 'dark' ? 'light' : 'dark'
+import img001 from '../images/cadelaria_di_pietro-001.jpg'
+import img002 from '../images/cadelaria_di_pietro-002.jpg'
 
+const About = () => {
+	const styles = {
+		imgs: {
+			objectFit: 'cover',
+			height: '200px',
+			width: '100%',
+			filter: 'sepia(0.6)',
+			mixBlendMode: 'multiply',
+		},
+	}
 	return (
-		<section className='about section py-5' id='nosotros'>
+		<section className='about section pt-5' id='nosotros'>
 			<div className='spacer py-3' />
 			<Container className='my-5'>
-				<Card
-					className={`shadow-sm border-0 p-0 p-md-3 bg-${
-						theme === 'dark' ? 'grey-700' : 'white'
-					}`}>
+				<Card className={`shadow-sm border-0 p-0 p-md-3 bg-white`}>
 					<Card.Body>
 						<Row>
 							<Col sm={12} md={4} className='d-flex'>
 								<Image src={aboutImg} fluid rounded style={{ objectFit: 'cover' }} />
 							</Col>
 							<Col sm={12} md={8} className='pr-md-5'>
-								<h2 className='about-title display-4 mt-4 mt-md-0'>Tu historia</h2>
+								<h2 className='about-title display-4 mt-4 mt-md-0'>¿Quienes Somos?</h2>
 								<p className='lead py-2'>
-									Cuenta tu historia, quién eres y qué ofreces. Déjale saber a tus clientes
-									porqué es importante que te elijan por sobre la competencia.
+									Somos un estudio jurídico con más de 35 años de experiencia. Nos
+									especializamos en despidos, accidentes y enfermedades laborales y
+									accidentes de tránsito.
 								</p>
 								<div className='h2 text-primary text-center text-md-left'>
-									<i className='ri-hand-heart-line'></i>
+									<i className='ri-scales-3-line'></i>
 								</div>
-								<p className='text-secondary mt-5'>
-									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
-									iure tempore omnis illo quibusdam. Quibusdam quae laudantium magni
-									possimus autem voluptatibus commodi, voluptates accusantium laboriosam!
-								</p>
-								<p className='text-secondary'>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-									obcaecati voluptate repellendus animi quis maiores neque dolore modi,
-									harum placeat repellat, quod sint aliquid odit! Praesentium neque omnis
-									et quo.
+								<p className='text-primary-grey'>
+									Contás con un amplio staff de abogados que resolverán tus inquietudes de
+									manera óptima, segura y confidencial. La seriedad y el compromiso con
+									nuestros clientes son nuestra marca registrada.
 								</p>
 							</Col>
 						</Row>
 					</Card.Body>
 				</Card>
+			</Container>
+			<Container fluid>
+				<Row>
+					<Col className='bg-secondary p-0 m-0'>
+						<Image src={img001} style={styles.imgs} />
+					</Col>
+					<Col className='bg-secondary p-0 m-0'>
+						<Image src={img002} style={styles.imgs} />
+					</Col>
+				</Row>
 			</Container>
 		</section>
 	)

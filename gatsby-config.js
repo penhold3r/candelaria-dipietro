@@ -1,10 +1,27 @@
 module.exports = {
 	siteMetadata: {
-		title: `Landing Page`,
-		description: `A Modern single scroll landing page for your bussiness.`,
+		title: `Candelaria Di Pietro`,
+		description: `Candelaria Di Pietro, abogacía.`,
 		siteUrl: 'https://landing.com',
-		keywords: 'landing page bussiness',
+		keywords: 'abogada consultoria legal legales jucio',
 		author: `@penholder`,
+		socialMedia: [
+			{
+				name: 'Facebook',
+				icon: 'ri-facebook-fill',
+				url: 'https://facebook.com/',
+			},
+			{
+				name: 'Twitter',
+				icon: 'ri-twitter-fill',
+				url: 'https://twitter.com/',
+			},
+			{
+				name: 'Instagram',
+				icon: 'ri-instagram-line',
+				url: 'https://instagram.com/',
+			},
+		],
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -32,8 +49,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `landing-page`,
-				short_name: `starter`,
+				name: `Candelaria Di Pietro`,
+				short_name: `DiPietro`,
 				start_url: `/`,
 				background_color: `#DDDDDD`,
 				theme_color: `#192221`,

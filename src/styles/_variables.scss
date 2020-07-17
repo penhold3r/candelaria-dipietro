@@ -6,20 +6,22 @@
 *
 */
 
-$primary-color: #00bab5;
+$primary-color: #38424d;
 //$primary-color: #7b07ff;
-$primary-grey: lighten(desaturate($primary-color, 85%), 10%);
+$primary-grey: lighten(desaturate($primary-color, 75%), 20%);
 
-$secondary-color: $primary-grey;
-$secondary-grey: lighten(desaturate($secondary-color, 85%), 10%);
+$secondary-color: #e7cfbe;
+$secondary-grey: lighten(desaturate($secondary-color, 75%), 10%);
 
-$grey: desaturate($primary-color, 95%);
+$grey: desaturate($primary-color, 80%);
 $light: lighten(desaturate($primary-color, 91%), 55%);
 $dark: darken(desaturate($primary-color, 85%), 25%);
 
 $theme-colors: (
 	'primary': $primary-color,
+	'primary-grey': $primary-grey,
 	'secondary': $secondary-color,
+	'secondary-grey': $secondary-grey,
 	'grey': $grey,
 	'light': $light,
 	'dark': $dark,
@@ -29,14 +31,16 @@ $theme-colors: (
 	'grey-400': lighten($grey, 10%),
 	'grey-500': $grey,
 	'grey-600': darken($grey, 10%),
-	'grey-700': darken($grey, 20%),
-	'grey-800': darken($grey, 25%),
-	'grey-900': darken($grey, 30%),
+	'grey-700': darken($grey, 15%),
+	'grey-800': darken($grey, 20%),
+	'grey-900': darken($grey, 22%),
 );
 
 :export {
 	primary: $primary-color;
+	primaryGrey: $primary-grey;
 	secondary: $secondary-color;
+	secondaryGrey: $secondary-grey;
 	grey: $grey;
 	light: $light;
 	dark: $dark;
@@ -50,6 +54,20 @@ $theme-colors: (
 	grey800: darken($grey, 25%);
 	grey900: darken($grey, 30%);
 }
+
+/***********************************
+*
+* TYPOGRAPHY
+*
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$font-family-base: 'Noto Serif', Georgia, serif;
+
+$enable-responsive-font-sizes: true;
+
+/**********************************/
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -117,17 +135,3 @@ $positions: static, relative, absolute, fixed, sticky;
 .h-100 {
 	width: 100%;
 }
-
-/***********************************
-*
-* TYPOGRAPHY
-*
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-$main-font: 'Open Sans', sans-serif;
-
-$enable-responsive-font-sizes: true;
-
-/**********************************/
