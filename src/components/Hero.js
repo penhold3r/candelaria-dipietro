@@ -8,28 +8,28 @@ import Link from './Link'
 import colors from '../styles/_variables.scss'
 import bg from '../images/cadelaria_di_pietro-hero.jpg'
 
-const Hero = () => {
-	const styles = {
-		hero: {
-			background: `url(${bg}) no-repeat fixed center / cover`,
-			position: 'relative',
-		},
-		jumbo: {
-			background: hex2rgba(colors.primary, 0.45),
-			height: '100vh',
-		},
-		cta: {
-			fontSize: '1rem',
-		},
-		scroll: {
-			position: 'absolute',
-			cursor: 'pointer',
-			left: 'auto',
-			right: 'auto',
-			bottom: 0,
-		},
-	}
+const styles = {
+	hero: {
+		background: `url(${bg}) no-repeat fixed center / cover`,
+		position: 'relative',
+	},
+	jumbo: {
+		background: hex2rgba(colors.primary, 0.45),
+		height: '100vh',
+	},
+	cta: {
+		fontSize: '1rem',
+	},
+	scroll: {
+		position: 'absolute',
+		cursor: 'pointer',
+		left: 'auto',
+		right: 'auto',
+		bottom: 0,
+	},
+}
 
+const Hero = () => {
 	return (
 		<section className='hero' style={styles.hero} id='inicio'>
 			<Jumbotron
