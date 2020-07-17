@@ -5,7 +5,7 @@ import hex2rgba from '../utils/hex2rgba'
 
 import Link from './Link'
 
-import colors from '../styles/_variables.scss'
+import colors from '../styles/_variables.module.scss'
 import bg from '../images/cadelaria_di_pietro-hero.jpg'
 
 const styles = {
@@ -14,7 +14,7 @@ const styles = {
 		position: 'relative',
 	},
 	jumbo: {
-		background: hex2rgba('#333333', 0.45),
+		background: hex2rgba(colors.primary, 0.45),
 		height: '100vh',
 	},
 	cta: {
