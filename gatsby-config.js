@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `Candelaria Di Pietro`,
-		description: `Candelaria Di Pietro, abogacía.`,
+		description: `Candelaria Di Pietro, abogada.`,
 		siteUrl: 'https://landing.com',
 		keywords: 'abogada consultoria legal legales jucio',
 		author: `@penholder`,
