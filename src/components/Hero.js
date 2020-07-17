@@ -14,7 +14,7 @@ const styles = {
 		position: 'relative',
 	},
 	jumbo: {
-		background: hex2rgba(colors.primary, 0.45),
+		background: hex2rgba('#333333', 0.45),
 		height: '100vh',
 	},
 	cta: {
