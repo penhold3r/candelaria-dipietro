@@ -21,11 +21,13 @@ const styles = {
 		fontSize: '1rem',
 	},
 	scroll: {
-		position: 'absolute',
-		cursor: 'pointer',
-		left: 'auto',
-		right: 'auto',
 		bottom: 0,
+		cursor: 'pointer',
+		left: 0,
+		margin: '0 auto',
+		position: 'absolute',
+		right: 0,
+		width: '35px',
 	},
 }
 
@@ -47,7 +49,9 @@ const Hero = () => {
 					</Button>
 				</Container>
 				<Link to={`/#nosotros`} className={`scroll text-white h2`} style={styles.scroll}>
-					<i className='ri-arrow-down-line' style={styles.scroll}></i>
+					<i
+						className='ri-arrow-down-line d-flex justify-content-center'
+						style={styles.scroll}></i>
 				</Link>
 			</Jumbotron>
 		</section>

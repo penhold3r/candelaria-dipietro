@@ -5,21 +5,21 @@ import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 import Link from './Link'
 
 import logo from '../images/candelaria_di_pietro-logo.svg'
+import logo2 from '../images/candelaria_di_pietro-logo-2.svg'
 
 const Header = () => {
-	const {
-		site: { siteMetadata },
-	} = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						title
-					}
+	const query = graphql`
+		query {
+			site {
+				siteMetadata {
+					title
 				}
 			}
-		`
-	)
+		}
+	`
+	const {
+		site: { siteMetadata },
+	} = useStaticQuery(query)
 	const [opaque, setOpaque] = useState(false)
 	const [colapsed, setColapsed] = useState(true)
 
@@ -28,13 +28,14 @@ const Header = () => {
 			transition: 'all 0.3s',
 		},
 		logo: {
-			height: '80px',
+			//height: '80px',
 			objectFit: 'contain',
-			width: '125px',
+			width: '150px',
 		},
 		contact: {
+			bottom: 'auto',
 			right: '3rem',
-			top: '0.5rem',
+			top: 'auto',
 		},
 		hamb: {
 			fontSize: '1.5rem',
@@ -76,7 +77,7 @@ const Header = () => {
 					<Navbar.Brand href='#'>
 						<img
 							alt={siteMetadata.title}
-							src={logo}
+							src={logo2}
 							className='d-inline-block align-top'
 							style={styles.logo}
 						/>
@@ -120,7 +121,7 @@ const Header = () => {
 						className='d-flex pos-absolute pos-md-static'
 						style={styles.contact}>
 						<i className='ri-chat-3-line mr-2'></i>
-						<span>Asesorate ahora</span>
+						<span>Asesorate</span>
 					</Button>
 				</Container>
 			</Navbar>

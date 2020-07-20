@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Card, Image } from 'react-bootstrap'
+import { isMobile } from 'react-device-detect'
 
 import aboutImg from '../images/cadelaria_di_pietro-abogada.jpg'
 
@@ -23,7 +24,11 @@ const About = () => {
 				<Card className={`shadow-sm border-0 p-0 p-md-3 bg-white`}>
 					<Card.Body>
 						<Row>
-							<Col sm={12} md={4} className='d-flex'>
+							<Col
+								sm={12}
+								md={4}
+								className='d-flex'
+								style={{ height: isMobile ? '175px' : 'auto' }}>
 								<Image src={aboutImg} fluid rounded style={{ objectFit: 'cover' }} />
 							</Col>
 							<Col sm={12} md={8} className='pr-md-5'>

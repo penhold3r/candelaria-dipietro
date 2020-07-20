@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Card, Row, Col, ListGroup, Form, InputGroup, Button } from 'react-bootstrap'
+import qs from 'qs'
+import axios from 'axios'
 
 import hex2rgba from '../utils/hex2rgba'
 
@@ -26,11 +28,38 @@ const Contact = () => {
 		setValidated(true)
 
 		if (form.checkValidity()) {
+			const url =
+				'https://cors-anywhere.herokuapp.com/http://valeriooliva.com/contact-form/index.php'
+
 			setModal(true)
 			setModalTexts({
-				title: '¡Mensaje Enviado!',
-				text: `${data.name}, gracias por comunicarte con nosotros, te responderemos a la brevedad.`,
+				title: 'Enviado...',
+				text: `${data.name}, estamos preparando tu mensaje.`,
 			})
+
+			axios({
+				method: 'post',
+				url,
+				data,
+				headers: {
+					'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+				},
+			})
+				.then(resp => {
+					setModalTexts({
+						title: '¡Mensaje Enviado!',
+						text: `${data.name}, gracias por comunicarte con nosotros, te responderemos a la brevedad.`,
+					})
+					console.log(resp)
+				})
+				.catch(err => {
+					setModalTexts({
+						title: '¡Hubo un error!',
+						text: `${data.name}, algo parece haber salido mal, intenta de nuevo más tarde.`,
+					})
+					console.err(err)
+				})
+
 			setValidated(false)
 			setData({ name: '', email: '', message: '' })
 		}
