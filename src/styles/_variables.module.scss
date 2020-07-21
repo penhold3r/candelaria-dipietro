@@ -7,14 +7,13 @@
 */
 
 $primary-color: #38424d;
-//$primary-color: #7b07ff;
-$primary-grey: lighten(desaturate($primary-color, 75%), 20%);
+$primary-grey: #888e94;
 
 $secondary-color: #e7cfbe;
 $secondary-grey: lighten(desaturate($secondary-color, 75%), 10%);
 
 $grey: desaturate($primary-color, 80%);
-$light: lighten(desaturate($primary-color, 91%), 55%);
+$light: #e8d0bf;
 $dark: darken(desaturate($primary-color, 85%), 25%);
 
 $theme-colors: (

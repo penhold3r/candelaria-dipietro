@@ -6,7 +6,7 @@ import hex2rgba from '../utils/hex2rgba'
 import Link from './Link'
 
 import colors from '../styles/_variables.module.scss'
-import bg from '../images/cadelaria_di_pietro-hero.jpg'
+import bg from '../images/candelaria_di_pietro-hero.jpg'
 
 const styles = {
 	hero: {

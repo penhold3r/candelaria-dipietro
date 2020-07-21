@@ -5,7 +5,6 @@ import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 import Link from './Link'
 
 import logo from '../images/candelaria_di_pietro-logo.svg'
-import logo2 from '../images/candelaria_di_pietro-logo-2.svg'
 
 const Header = () => {
 	const query = graphql`
@@ -28,14 +27,14 @@ const Header = () => {
 			transition: 'all 0.3s',
 		},
 		logo: {
-			//height: '80px',
+			height: '60px',
 			objectFit: 'contain',
-			width: '150px',
+			width: '200px',
 		},
 		contact: {
 			bottom: 'auto',
 			right: '3rem',
-			top: 'auto',
+			top: '18px',
 		},
 		hamb: {
 			fontSize: '1.5rem',
@@ -67,17 +66,12 @@ const Header = () => {
 
 	return (
 		<header className='main-header'>
-			<Navbar
-				bg={opaque ? 'primary' : 'transparent'}
-				variant={'dark'}
-				fixed='top'
-				expand='md'
-				style={styles.nav}>
+			<Navbar bg='primary' variant='dark' fixed='top' expand='md' style={styles.nav}>
 				<Container className='pos-relative'>
 					<Navbar.Brand href='#'>
 						<img
 							alt={siteMetadata.title}
-							src={logo2}
+							src={logo}
 							className='d-inline-block align-top'
 							style={styles.logo}
 						/>
@@ -85,7 +79,7 @@ const Header = () => {
 					<Navbar.Toggle
 						as='div'
 						style={styles.hamb}
-						bsPrefix={`p-1 text-light d-flex d-md-none`}
+						bsPrefix='p-1 text-light d-flex d-md-none'
 						children={toggleIcon}
 						aria-controls='basic-navbar-nav'
 						ref={toggleBtn}
@@ -117,7 +111,7 @@ const Header = () => {
 					</Navbar.Collapse>
 					<Button
 						href='#contacto'
-						variant={'secondary'}
+						variant='secondary'
 						className='d-flex pos-absolute pos-md-static'
 						style={styles.contact}>
 						<i className='ri-chat-3-line mr-2'></i>

@@ -10,6 +10,7 @@ import ContactModal from './ContactModal'
 const Contact = () => {
 	const [validated, setValidated] = useState(false)
 	const [modal, setModal] = useState(false)
+	const [modalStatus, setModalStatus] = useState('')
 	const [data, setData] = useState({ name: '', email: '', message: '' })
 	const [modalTexts, setModalTexts] = useState({ title: '', text: '' })
 
@@ -36,11 +37,12 @@ const Contact = () => {
 				title: 'Enviado...',
 				text: `${data.name}, estamos preparando tu mensaje.`,
 			})
+			setModalStatus('sending')
 
 			axios({
 				method: 'post',
 				url,
-				data,
+				data: qs.stringify(data),
 				headers: {
 					'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
 				},
@@ -50,6 +52,7 @@ const Contact = () => {
 						title: '¡Mensaje Enviado!',
 						text: `${data.name}, gracias por comunicarte con nosotros, te responderemos a la brevedad.`,
 					})
+					setModalStatus('success')
 					console.log(resp)
 				})
 				.catch(err => {
@@ -57,6 +60,7 @@ const Contact = () => {
 						title: '¡Hubo un error!',
 						text: `${data.name}, algo parece haber salido mal, intenta de nuevo más tarde.`,
 					})
+					setModalStatus('error')
 					console.err(err)
 				})
 
@@ -70,6 +74,7 @@ const Contact = () => {
 			<ContactModal
 				show={modal}
 				onHide={() => setModal(false)}
+				status={modalStatus}
 				title={modalTexts.title}
 				text={modalTexts.text}
 			/>

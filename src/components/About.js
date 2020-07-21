@@ -2,10 +2,12 @@ import React from 'react'
 import { Container, Row, Col, Card, Image } from 'react-bootstrap'
 import { isMobile } from 'react-device-detect'
 
-import aboutImg from '../images/cadelaria_di_pietro-abogada.jpg'
+import logoFull from '../images/candelaria_di_pietro-logo_full.svg'
 
-import img001 from '../images/cadelaria_di_pietro-001.jpg'
-import img002 from '../images/cadelaria_di_pietro-002.jpg'
+import aboutImg from '../images/candelaria_di_pietro-abogada.jpg'
+
+import img001 from '../images/candelaria_di_pietro-001.jpg'
+import img002 from '../images/candelaria_di_pietro-002.jpg'
 
 const About = () => {
 	const styles = {
@@ -19,8 +21,13 @@ const About = () => {
 	}
 	return (
 		<section className='about section pt-5' id='nosotros'>
-			<div className='spacer py-3' />
-			<Container className='my-5'>
+			<Container fluid className='bg-primary p-5 mb-5'>
+				<Image
+					src={logoFull}
+					style={{ objectFit: 'contain', height: '150px', width: '100%' }}
+				/>
+			</Container>
+			<Container className='py-5'>
 				<Card className={`shadow-sm border-0 p-0 p-md-3 bg-white`}>
 					<Card.Body>
 						<Row>
@@ -51,7 +58,7 @@ const About = () => {
 					</Card.Body>
 				</Card>
 			</Container>
-			<Container fluid>
+			<Container fluid className='mt-5'>
 				<Row>
 					<Col className='bg-secondary p-0 m-0'>
 						<Image src={img001} style={styles.imgs} />

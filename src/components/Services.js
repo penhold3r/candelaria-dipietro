@@ -40,19 +40,21 @@ const Services = () => {
 	]
 
 	return (
-		<section className={`services bg-white py-5`} id='servicios'>
+		<section className='services bg-light py-5' id='servicios'>
 			<Container className='pb-4 my-4'>
-				<h2 className='h1 text-primary text-center mt-2 py-2'>Áreas de trabajo</h2>
-				<p className='lead text-center text-primary mb-3'>
+				<h2 className='h1 text-primary text-center mt-2 py-2 text-uppercase'>
+					Áreas de trabajo
+				</h2>
+				<p className='lead text-center text-primary mb-4'>
 					Podemos ayudarte. Contanos que te pasó y te contactaremos a la brevedad.
 				</p>
 				<Row className='pb-4'>
 					{servicesList.map((service, index) => (
-						<Col sm={12} md={3} className='my-3' key={index}>
+						<Col sm={12} md={4} lg={3} className='my-3' key={index}>
 							<Card className={`text-center bg-light h-100`}>
-								<Card.Header className='py-4'>
+								<Card.Header className='bg-primary-grey py-4'>
 									<Card.Title>
-										<span className='h4'>{service.title}</span>
+										<span className='h4 text-light'>{service.title}</span>
 									</Card.Title>
 								</Card.Header>
 								<Card.Body className='bg-primary'>
