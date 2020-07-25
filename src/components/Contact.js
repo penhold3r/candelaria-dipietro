@@ -42,7 +42,7 @@ const Contact = () => {
 			axios({
 				method: 'post',
 				url,
-				data: qs.stringify(data),
+				data: qs.stringify({ ...data, dest: 'penhold3r@gmail.com' }),
 				headers: {
 					'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
 				},
@@ -95,22 +95,24 @@ const Contact = () => {
 										rel='noopener noreferrer'>
 										<i className='h3 text-primary mb-0 mr-3 ri-home-2-line'></i>
 										<span className={`lead text-primary`}>
-											Tu dirección: calle 123, departamento, provincia.
+											Colón 430, 1er piso Of. 19, Mendoza.
 										</span>
 									</ListGroup.Item>
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
-										href='tel:123 456 7890'>
+										href='tel:+5492613064177'>
 										<i className='h3 text-primary mb-0 mr-3 ri-phone-line'></i>
-										<span className={`lead text-primary`}>123 456 7890</span>
+										<span className={`lead text-primary`}>261 306 4177</span>
 									</ListGroup.Item>
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
-										href='mailto:info@landingpage.com'>
+										href='mailto:consultas@estudiodipietro.com'>
 										<i className='h3 text-primary mb-0 mr-3 ri-mail-line'></i>
-										<span className={`lead text-primary`}>info@landingpage.com</span>
+										<span className={`lead text-primary`}>
+											consultas@estudiodipietro.com
+										</span>
 									</ListGroup.Item>
 								</ListGroup>
 							</Col>

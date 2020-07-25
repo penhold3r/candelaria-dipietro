@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Container } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import Link from './Link'
 
 const Footer = () => {
@@ -28,19 +28,30 @@ const Footer = () => {
 			<Container className='my-3'>
 				<div className='d-flex py-2 justify-content-center'>
 					{siteMetadata.socialMedia.map((icon, index) => (
-						<Link
+						<Button
 							key={index}
-							style={{ height: '35px', width: '35px' }}
-							className='border border-secondary rounded-circle d-flex justify-content-center align-content-center mx-2'
-							to={icon.url}
+							className='rounded-circle mx-2'
+							variant='outline-secondary'
+							href={icon.url}
+							target='_blank'
+							rel='noopener noreferrer'
 							title={icon.name}>
-							<i className={`${icon.icon} text-light lead m-auto`}></i>
-						</Link>
+							<i className={`${icon.icon} lead`}></i>
+						</Button>
 					))}
 				</div>
 				<p className={`text-center text-light my-3`}>
 					<small>
-						{siteMetadata.title} &copy; {new Date().getFullYear()}
+						<span>
+							{siteMetadata.title} &copy; {new Date().getFullYear()}
+						</span>
+						<span> | </span>
+						<span>
+							Desarrollado por{' '}
+							<Link to='https://github.com/penhold3r' className='text-secondary'>
+								penHolder Designerd
+							</Link>
+						</span>
 					</small>
 				</p>
 			</Container>

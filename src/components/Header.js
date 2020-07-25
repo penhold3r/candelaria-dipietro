@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Navbar, Nav, Button } from 'react-bootstrap'
+import { isMobileOnly } from 'react-device-detect'
 
 import Link from './Link'
 
@@ -107,16 +108,29 @@ const Header = () => {
 								onClick={() => toggleBtn.current.click()}>
 								Nosotros
 							</Link>
+							{isMobileOnly && (
+								<>
+									<div className='border-bottom d-md-none border-grey' />
+									<Link
+										to='/#contacto'
+										className='text-secondary text-decoration-none py-3 p-md-2'
+										onClick={() => toggleBtn.current.click()}>
+										Contacto
+									</Link>
+								</>
+							)}
 						</Nav>
 					</Navbar.Collapse>
-					<Button
-						href='#contacto'
-						variant='secondary'
-						className='d-flex pos-absolute pos-md-static'
-						style={styles.contact}>
-						<i className='ri-chat-3-line mr-2'></i>
-						<span>Asesorate</span>
-					</Button>
+					{!isMobileOnly && (
+						<Button
+							href='#contacto'
+							variant='secondary'
+							className='d-flex pos-absolute pos-md-static align-items-center'
+							style={styles.contact}>
+							<i className='ri-chat-3-line mr-2'></i>
+							<span>Asesorate</span>
+						</Button>
+					)}
 				</Container>
 			</Navbar>
 		</header>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Jumbotron, Container, Button } from 'react-bootstrap'
+import { isMobileOnly } from 'react-device-detect'
 
 import hex2rgba from '../utils/hex2rgba'
 
@@ -42,11 +43,25 @@ const Hero = () => {
 					<h2 className={`hero-text display-4 text-center text-white`}>
 						Nos especializamos en derecho laboral, civil y comercial.
 					</h2>
-					<Button href='#nosotros' variant={`outline-secondary mt-5 mx-auto`} size='lg'>
-						<span className='text-uppercase' style={styles.cta}>
-							Conocenos
-						</span>
-					</Button>
+					{isMobileOnly ? (
+						<Button
+							href='#contacto'
+							variant='secondary'
+							className='mt-5 mx-auto d-inline-flex align-items-center'>
+							<i className='ri-chat-3-line mr-2'></i>
+							<span>Asesorate</span>
+						</Button>
+					) : (
+						<Button
+							href='#nosotros'
+							variant='outline-secondary'
+							className='mt-5 mx-auto'
+							size='lg'>
+							<span className='text-uppercase' style={styles.cta}>
+								Conocenos
+							</span>
+						</Button>
+					)}
 				</Container>
 				<Link to={`/#nosotros`} className={`scroll text-white h2`} style={styles.scroll}>
 					<i
