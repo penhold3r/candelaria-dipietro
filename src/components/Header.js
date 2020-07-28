@@ -123,7 +123,7 @@ const Header = () => {
 					</Navbar.Collapse>
 					{!isMobileOnly && (
 						<Button
-							href='#contacto'
+							href='/#contacto'
 							variant='secondary'
 							className='d-flex pos-absolute pos-md-static align-items-center'
 							style={styles.contact}>

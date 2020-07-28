@@ -45,7 +45,7 @@ const Hero = () => {
 					</h2>
 					{isMobileOnly ? (
 						<Button
-							href='#contacto'
+							href='/#contacto'
 							variant='secondary'
 							className='mt-5 mx-auto d-inline-flex align-items-center'>
 							<i className='ri-chat-3-line mr-2'></i>
@@ -53,7 +53,7 @@ const Hero = () => {
 						</Button>
 					) : (
 						<Button
-							href='#nosotros'
+							href='/#nosotros'
 							variant='outline-secondary'
 							className='mt-5 mx-auto'
 							size='lg'>

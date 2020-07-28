@@ -1,25 +1,17 @@
 module.exports = {
 	siteMetadata: {
 		title: `Candelaria Di Pietro`,
-		description: `Candelaria Di Pietro, abogada.`,
-		siteUrl: 'https://landing.com',
+		description: `Estudio Di Pietro se especializa en despidos, accidentes y enfermedades laborales y accidentes de tránsito.`,
+		siteUrl: 'https://estudiodipietro.com',
 		keywords: 'abogada consultoria legal legales jucio',
 		author: `@penholder`,
 		socialMedia: [
 			{
-				name: 'Facebook',
-				icon: 'ri-facebook-fill',
-				url: 'https://facebook.com/',
-			},
-			{
-				name: 'Twitter',
-				icon: 'ri-twitter-fill',
-				url: 'https://twitter.com/',
-			},
-			{
-				name: 'Instagram',
-				icon: 'ri-instagram-line',
-				url: 'https://instagram.com/',
+				name: 'Whatsapp',
+				icon: 'ri-whatsapp-line',
+				url: `https://wa.me/5492613064177?text=${encodeURI(
+					'Hola, necesito hacer una consulta.'
+				)}`,
 			},
 		],
 	},
@@ -41,7 +33,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-anchor-links',
 			options: {
-				offset: -150,
+				offset: -170,
 			},
 		},
 		`gatsby-transformer-sharp`,
@@ -52,8 +44,8 @@ module.exports = {
 				name: `Candelaria Di Pietro`,
 				short_name: `DiPietro`,
 				start_url: `/`,
-				background_color: `#DDDDDD`,
-				theme_color: `#192221`,
+				background_color: `#e7cfbe`,
+				theme_color: `#38424d`,
 				display: `standalone`,
 				icon: `src/images/favicon.png`,
 			},
