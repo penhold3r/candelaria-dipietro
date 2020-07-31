@@ -29,8 +29,7 @@ const Contact = () => {
 		setValidated(true)
 
 		if (form.checkValidity()) {
-			const url =
-				'https://cors-anywhere.herokuapp.com/http://valeriooliva.com/contact-form/index.php'
+			const url = 'https://estudiojuridicodipietro.com/contact-form/index.php'
 
 			setModal(true)
 			setModalTexts({
@@ -42,7 +41,10 @@ const Contact = () => {
 			axios({
 				method: 'post',
 				url,
-				data: qs.stringify({ ...data, dest: 'penhold3r@gmail.com' }),
+				data: qs.stringify({
+					...data,
+					dest: 'penhold3r@gmail.com,consultas@estudiojuridicodipietro.com',
+				}),
 				headers: {
 					'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
 				},
@@ -90,7 +92,7 @@ const Contact = () => {
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
-										href='https://maps.google.com'
+										href='https://goo.gl/maps/eQuryAaUje7HAbBz7'
 										target='_blank'
 										rel='noopener noreferrer'>
 										<i className='h3 text-primary mb-0 mr-3 ri-home-2-line'></i>
@@ -108,10 +110,10 @@ const Contact = () => {
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
-										href='mailto:consultas@estudiodipietro.com'>
+										href='mailto:consultas@estudiojuridicodipietro.com'>
 										<i className='h3 text-primary mb-0 mr-3 ri-mail-line'></i>
 										<span className={`lead text-primary`}>
-											consultas@estudiodipietro.com
+											consultas@estudiojuridicodipietro.com
 										</span>
 									</ListGroup.Item>
 								</ListGroup>
@@ -137,7 +139,7 @@ const Contact = () => {
 												className={`bg-white border-grey-100 text-dark rounded-right`}
 												onChange={e => handleChange(e)}
 												type='text'
-												placeholder='Cosme Fulanito'
+												placeholder='Nombre y Apellido'
 												name='name'
 												value={data.name}
 												required

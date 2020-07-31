@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Candelaria Di Pietro`,
 		description: `Estudio Di Pietro se especializa en despidos, accidentes y enfermedades laborales y accidentes de tránsito.`,
-		siteUrl: 'https://estudiodipietro.com',
+		siteUrl: 'https://estudiojuridicodipietro.com',
 		keywords: 'abogada consultoria legal legales jucio',
 		author: `@penholder`,
 		socialMedia: [
