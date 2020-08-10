@@ -41,7 +41,7 @@ const Hero = () => {
 				className={`m-0 d-flex justify-content-center align-items-center flex-column`}>
 				<Container className={`d-flex flex-column`}>
 					<h2 className={`hero-text display-4 text-center text-white`}>
-						Nos especializamos en derecho laboral, civil y comercial.
+						Nos dedicamos al derecho laboral y accidentes de tránsito.
 					</h2>
 					{isMobileOnly ? (
 						<Button

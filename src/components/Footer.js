@@ -41,15 +41,24 @@ const Footer = () => {
 					))}
 				</div>
 				<p className={`text-center text-light my-3`}>
-					<small>
-						<span>
+					<small className='d-flex flex-sm-column flex-md-row justify-content-center'>
+						<span className='mb-sm-2 mb-md-none'>
 							{siteMetadata.title} &copy; {new Date().getFullYear()}
 						</span>
-						<span> | </span>
-						<span>
-							Desarrollado por{' '}
+						<span className='d-sm-none d-md-inline-block'>&emsp;|&emsp;</span>
+						<span className='mb-sm-2 mb-md-none'>
+							Desarrollo:{' '}
 							<Link to='https://github.com/penhold3r' className='text-secondary'>
 								penHolder Designerd
+							</Link>
+						</span>
+						<span className='d-sm-none d-md-inline-block'>&emsp;|&emsp;</span>
+						<span className='mb-sm-2 mb-md-none'>
+							Diseño:{' '}
+							<Link
+								to='https://www.instagram.com/cm_brand_agency/'
+								className='text-secondary'>
+								CM Brand Agency
 							</Link>
 						</span>
 					</small>

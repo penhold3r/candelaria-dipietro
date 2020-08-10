@@ -41,17 +41,16 @@ const About = () => {
 							<Col sm={12} md={8} className='pr-md-5'>
 								<h2 className='about-title display-4 mt-4 mt-md-0'>¿Quienes Somos?</h2>
 								<p className='lead py-2'>
-									Somos un estudio jurídico con más de 35 años de experiencia. Nos
-									especializamos en despidos, accidentes y enfermedades laborales y
-									accidentes de tránsito.
+									Somos un estudio jurídico con 20 años de experiencia en accidentes de
+									tránsito, despidos y enfermedades de trabajo.
 								</p>
 								<div className='h2 text-primary text-center text-md-left'>
 									<i className='ri-scales-3-line'></i>
 								</div>
 								<p className='text-primary-grey'>
-									Contás con un amplio staff de abogados que resolverán tus inquietudes de
-									manera óptima, segura y confidencial. La seriedad y el compromiso con
-									nuestros clientes son nuestra marca registrada.
+									Resolverán tus inquietudes de manera óptima, segura y confidencial. La
+									seriedad y el compromiso con nuestros clientes son nuestra marca
+									registrada.
 								</p>
 							</Col>
 						</Row>

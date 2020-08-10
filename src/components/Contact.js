@@ -96,7 +96,7 @@ const Contact = () => {
 										target='_blank'
 										rel='noopener noreferrer'>
 										<i className='h3 text-primary mb-0 mr-3 ri-home-2-line'></i>
-										<span className={`lead text-primary`}>
+										<span className={`text-primary`}>
 											Colón 430, 1er piso Of. 19, Mendoza.
 										</span>
 									</ListGroup.Item>
@@ -105,16 +105,16 @@ const Contact = () => {
 										action
 										href='tel:+5492613064177'>
 										<i className='h3 text-primary mb-0 mr-3 ri-phone-line'></i>
-										<span className={`lead text-primary`}>261 306 4177</span>
+										<span className={`text-primary`}>261 306 4177</span>
 									</ListGroup.Item>
 									<ListGroup.Item
 										className='d-flex align-items-center bg-transparent px-0 px-md-3'
 										action
-										href='mailto:consultas@estudiojuridicodipietro.com'>
-										<i className='h3 text-primary mb-0 mr-3 ri-mail-line'></i>
-										<span className={`lead text-primary`}>
-											consultas@estudiojuridicodipietro.com
-										</span>
+										href={`https://wa.me/5492613064177?text=${encodeURI(
+											'Hola, necesito hacer una consulta.'
+										)}`}>
+										<i className='h3 text-primary mb-0 mr-3 ri-whatsapp-line'></i>
+										<span className={`text-primary`}>Comunicate por Whatsapp</span>
 									</ListGroup.Item>
 								</ListGroup>
 							</Col>
@@ -125,7 +125,7 @@ const Contact = () => {
 									validated={validated}
 									onSubmit={handleSubmit}>
 									<Form.Group controlId='name'>
-										<Form.Label>Nombre</Form.Label>
+										<Form.Label className='sr-only'>Nombre</Form.Label>
 										<InputGroup>
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
@@ -155,7 +155,7 @@ const Contact = () => {
 									</Form.Group>
 
 									<Form.Group controlId='email'>
-										<Form.Label>Email</Form.Label>
+										<Form.Label className='sr-only'>Email</Form.Label>
 										<InputGroup>
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
@@ -184,7 +184,7 @@ const Contact = () => {
 									</Form.Group>
 
 									<Form.Group controlId='msg'>
-										<Form.Label>Mensaje</Form.Label>
+										<Form.Label className='sr-only'>Mensaje</Form.Label>
 										<InputGroup>
 											<InputGroup.Prepend className='border-0'>
 												<InputGroup.Text
